@@ -12,7 +12,7 @@ public class TestCountSteps {
 	
 	@Test
 	public void testCountPossibleStepCombinationsFor0Steps() {
-		assertEquals("Should be 0", 0, cs.countPossibleStepCombinations(1));
+		assertEquals("Should be 1", 1, cs.countPossibleStepCombinations(0));
 	}
 	
 	@Test
@@ -22,11 +22,16 @@ public class TestCountSteps {
 
 	@Test
 	public void testCountPossibleStepCombinationsFor2Steps() {
-		assertEquals("Should be 3", 3, cs.countPossibleStepCombinations(1));
+		assertEquals("Should be 2", 2, cs.countPossibleStepCombinations(2));
+	}
+
+	@Test
+	public void testCountPossibleStepCombinationsFor3Steps() {
+		assertEquals("Should be 4", 4, cs.countPossibleStepCombinations(3));
 	}
 	
 	@Test
-	public void testCountPossibleStepCombinationsFor3Steps() {
-		assertEquals("Should be 6", 6, cs.countPossibleStepCombinations(1));
+	public void testCountPossibleStepCombinationsFor4Steps() {
+		assertEquals("Should be 7", 7, cs.countPossibleStepCombinations(4));
 	}
 }

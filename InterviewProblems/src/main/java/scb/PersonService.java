@@ -1,12 +1,16 @@
 package main.java.scb;
 
-import java.util.List;
+import java.util.Set;
 
+/**
+ * Get operations should exhibit the same performance while returning data
+ */
 public interface PersonService {
 
-	public void add(List<Person> persons);
+	void addOrUpdate(Person person) throws InterruptedException;
 	
-	public int countPersons(String name);
-	
-	public void clear();
+	Person get(int id);
+
+	Set<Person> get(String name);
+
 }

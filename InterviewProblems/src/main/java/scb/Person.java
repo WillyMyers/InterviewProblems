@@ -2,18 +2,18 @@ package main.java.scb;
 
 public class Person {
 
-	private long id;
+	private int id;
 	private String name;
 	
 	
-	public Person(long id, String name) {
+	public Person(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
@@ -24,34 +24,22 @@ public class Person {
 
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (id ^ (id >>> 32));
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
-	}
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
 
+		Person person = (Person) o;
+
+		if (id != person.id) return false;
+		return name != null ? name.equals(person.name) : person.name == null;
+	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Person other = (Person) obj;
-		if (id != other.id)
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		return true;
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		return result;
 	}
-
 
 	@Override
 	public String toString() {
