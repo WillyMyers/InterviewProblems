@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import main.java.countsteps.CountSteps;
+import main.java.dynamic.CountSteps;
 
 public class TestCountSteps {
 
