@@ -1,4 +1,4 @@
-package main.java.coins;
+package main.java.dynamic;
 
 import java.util.Arrays;
 
@@ -25,13 +25,12 @@ public class CoinMinimum {
         // now solve for all the amounts up to n
         for (int amount = 1; amount <= n; amount++) {
             // Now try taking every coin one at a time and pick the minimum
-            for (int j = 0; j < coins.length; j++) {
-                int coin = coins[j];
-                if (coin  <= amount) { // check if coin value is less than amount
+            for (int coin : coins) {
+                if (coin <= amount) { // check if coin value is less than amount
                     // select the coin and add 1 to solution of (amount-coin value)
                     int x = coinReq[amount - coin] + 1; //gets a previously computed solution and adds 1
                     int y = coinReq[amount];
-                    coinReq[amount] = Math.min(x,y) ;
+                    coinReq[amount] = Math.min(x, y);
                 }
             }
         }
