@@ -1,5 +1,7 @@
 package main.java.sort;
 
+import java.util.Arrays;
+
 public class Sorting {
 
 	public static void main(String[] args) {
@@ -64,8 +66,6 @@ public class Sorting {
 	}
 
 	private static void printContents(String type, int[] arr){
-		for (int i : arr) {
-			System.out.println(type + " : " + i);
-		}
+		System.out.println(type + " : " + Arrays.toString(arr));
 	}
 }
